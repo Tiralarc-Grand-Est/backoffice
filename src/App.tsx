@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  Admin,
+  Resource,
+  ListGuesser,
+  ShowGuesser,
+  EditGuesser,
+} from "react-admin";
+import jsonServerProvider from "ra-data-json-server";
+import polyglotI18nProvider from "ra-i18n-polyglot";
+import frenchMessages from "ra-language-french";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const i18nProvider = polyglotI18nProvider(() => frenchMessages, "fr");
+
+const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
+const App = () => (
+  <Admin dataProvider={dataProvider} i18nProvider={i18nProvider}>
+    <Resource
+      name="users"
+      list={ListGuesser}
+      show={ShowGuesser}
+      edit={EditGuesser}
+    />
+  </Admin>
+);
 
 export default App;

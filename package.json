@@ -11,6 +11,8 @@
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "ra-data-json-server": "^3.4.1",
+    "ra-i18n-polyglot": "^3.4.1",
+    "ra-language-french": "^3.4.1",
     "react": "^16.13.1",
     "react-admin": "^3.4.2",
     "react-dom": "^16.13.1",
