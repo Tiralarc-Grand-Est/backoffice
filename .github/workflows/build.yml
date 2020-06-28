@@ -1,0 +1,33 @@
+name: Yarn
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF##*/}
+
+      - name: Docker build
+        env:
+          IMAGE_NAME: crta-backoffice
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+        run: |
+          docker build --tag $IMAGE_NAME:$VERSION .
+
+      - name: Docker publish
+        env:
+          IMAGE_NAME: crta-backoffice
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "$GITHUB_TOKEN" | docker login docker.pkg.github.com -u $GITHUB_ACTOR --password-stdin
+          docker tag $IMAGE_NAME:$VERSION docker.pkg.github.com/tiralarc-grand-est/backoffice/$IMAGE_NAME:$VERSION
+          docker push docker.pkg.github.com/tiralarc-grand-est/backoffice/$IMAGE_NAME:$VERSION
