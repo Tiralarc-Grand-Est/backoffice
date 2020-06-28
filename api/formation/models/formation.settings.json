@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "formations",
+  "info": {
+    "name": "Formation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Titre": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
