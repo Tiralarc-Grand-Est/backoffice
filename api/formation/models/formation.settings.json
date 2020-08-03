@@ -9,9 +9,13 @@
     "timestamps": true
   },
   "attributes": {
-    "Titre": {
+    "titre": {
       "type": "string",
       "required": true
+    },
+    "saison": {
+      "via": "formations",
+      "model": "saison"
     }
   }
 }

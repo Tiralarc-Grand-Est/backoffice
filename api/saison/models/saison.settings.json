@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "saisons",
+  "info": {
+    "name": "Saison"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "annee": {
+      "required": true,
+      "unique": true,
+      "max": 3000,
+      "min": 2000,
+      "type": "integer"
+    },
+    "formations": {
+      "collection": "formation",
+      "via": "saison"
+    }
+  }
+}
