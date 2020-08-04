@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_formation_sessions",
+  "info": {
+    "name": "Session",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "secteur": {
+      "type": "enumeration",
+      "enum": [
+        "Tout_secteur",
+        "Alsace",
+        "Champagne_Ardenne",
+        "Lorraine"
+      ]
+    },
+    "lieu": {
+      "type": "richtext",
+      "required": true
+    },
+    "remarque": {
+      "type": "richtext"
+    },
+    "helloasso": {
+      "type": "string"
+    },
+    "dates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "formation.date-session",
+      "required": false
+    }
+  }
+}

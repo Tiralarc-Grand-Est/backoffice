@@ -16,6 +16,92 @@
     "saison": {
       "via": "formations",
       "model": "saison"
+    },
+    "sessions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "formation.session"
+    },
+    "url": {
+      "type": "uid",
+      "required": true,
+      "minLength": 5,
+      "maxLength": 100
+    },
+    "categorie": {
+      "type": "enumeration",
+      "enum": [
+        "CS",
+        "CF",
+        "CA"
+      ],
+      "required": true
+    },
+    "reference": {
+      "type": "string",
+      "required": true,
+      "minLength": 3,
+      "maxLength": 10
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "objectifs": {
+      "type": "richtext"
+    },
+    "contenu": {
+      "type": "richtext"
+    },
+    "prerequis": {
+      "type": "richtext"
+    },
+    "particularites": {
+      "type": "richtext"
+    },
+    "duree": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "programmation": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "prix": {
+      "type": "component",
+      "repeatable": true,
+      "component": "formation.prix"
+    },
+    "examen": {
+      "type": "richtext"
+    },
+    "complements": {
+      "type": "richtext"
+    },
+    "helloasso": {
+      "type": "string"
+    },
+    "ffta": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "scores": {
+      "type": "component",
+      "repeatable": true,
+      "component": "formation.score"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "actif": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
     }
   }
 }

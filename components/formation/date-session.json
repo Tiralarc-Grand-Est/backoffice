@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_formation_date_sessions",
+  "info": {
+    "name": "DateSession",
+    "icon": "calendar-check"
+  },
+  "options": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "debut": {
+      "type": "date",
+      "required": false
+    },
+    "fin": {
+      "type": "date"
+    },
+    "indication": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "horaires": {
+      "type": "string"
+    },
+    "contenu": {
+      "type": "richtext"
+    },
+    "helloasso": {
+      "type": "string"
+    }
+  }
+}

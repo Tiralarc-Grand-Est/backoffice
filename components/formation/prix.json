@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_formation_prixes",
+  "info": {
+    "name": "Prix",
+    "icon": "euro-sign"
+  },
+  "options": {},
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "hebergement": {
+      "type": "string"
+    },
+    "restauration": {
+      "type": "string"
+    },
+    "total": {
+      "type": "float",
+      "required": true
+    }
+  }
+}

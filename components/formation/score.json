@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_formation_scores",
+  "info": {
+    "name": "Score",
+    "icon": "border-all"
+  },
+  "options": {},
+  "attributes": {
+    "categorie": {
+      "type": "string",
+      "required": true,
+      "minLength": 1,
+      "maxLength": 10
+    },
+    "score": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
