@@ -3,7 +3,7 @@ FROM strapi/base:12-alpine
 WORKDIR /my-path
 
 COPY ./package.json ./
-COPY ./package-lock.json ./
+COPY ./yarn.lock ./
 
 RUN yarn install
 
